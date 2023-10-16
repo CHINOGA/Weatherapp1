@@ -1,4 +1,13 @@
-html {
-  height: 100%;
-  width: 100%;
+/* Add the respective CSS classes for the weather app */
+
+.weather-container {
+  /* your styles here */
+}
+
+.weather-header {
+  /* your styles here */
+}
+
+.weather-body {
+  /* your styles here */
 }
