@@ -1,12 +1,19 @@
-// script.js
+function updateWeather() {
+  // Get the user's search query
+  const searchQuery = document.getElementById('weather-search').value;
 
-// Add this code to update the weather container with the respective CSS classes
-
-const weatherContainer = document.getElementById("weather-container");
-weatherContainer.classList.add("weather-container");
-
-const weatherHeader = document.getElementById("weather-header");
-weatherHeader.classList.add("weather-header");
-
-const weatherBody = document.getElementById("weather-body");
-weatherBody.classList.add("weather-body");
+  // Make an API call to fetch the weather data
+  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchQuery}&appid=YOUR_API_KEY`)
+    .then(response => response.json())
+    .then(data => {
+      // Display the current weather data
+      document.getElementById('current-temperature').innerHTML = `${data.main.temp} °F`;
+      document.getElementById('current-conditions').innerHTML = data.weather[0].main;
+      document.getElementById('current-humidity').innerHTML = `${data.main.humidity}%`;
+      document.getElementById('current-wind').innerHTML = `${data.wind.speed} mph`;
+    })
+    .catch(error => {
+      // Handle the error
+      console.log(error);
+    });
+}

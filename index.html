@@ -1,9 +1,31 @@
-<!-- Replace this section in index.html -->
 <div id="weather-container">
   <div id="weather-header">
     <h2>Weather App</h2>
+    <input type="text" id="weather-search" placeholder="Search for a city...">
   </div>
   <div id="weather-body">
-    <p>Loading...</p>
+    <div id="current-weather">
+      <h3>Current Weather</h3>
+      <ul>
+        <li id="current-temperature"></li>
+        <li id="current-conditions"></li>
+        <li id="current-humidity"></li>
+        <li id="current-wind"></li>
+      </ul>
+    </div>
+    <div id="forecast-weather">
+      <h3>Forecast</h3>
+      <table id="forecast-table">
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>Temperature</th>
+            <th>Conditions</th>
+          </tr>
+        </thead>
+        <tbody>
+          </tbody>
+      </table>
+    </div>
   </div>
 </div>
